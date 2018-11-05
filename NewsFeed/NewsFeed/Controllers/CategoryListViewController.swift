@@ -57,12 +57,11 @@ class CategoryListViewController: UITableViewController {
     // MARK: - Table view delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: false)
         if let categoryItem = categoryList?[indexPath.row] {
             performSegue(withIdentifier: Identifier.categoryList, sender: categoryItem)
         }
     }
-    
 }
 
 extension CategoryListViewController {

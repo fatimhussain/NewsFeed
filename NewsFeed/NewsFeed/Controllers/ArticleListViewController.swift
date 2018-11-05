@@ -31,7 +31,6 @@ class ArticleListViewController: UITableViewController {
         tableView.rowHeight = 204
         tableView.layoutMargins = UIEdgeInsets.zero
         tableView.separatorInset = UIEdgeInsets.zero
-        tableView.backgroundColor = .clear
         tableView.reloadData()
     }
     
