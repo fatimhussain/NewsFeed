@@ -53,31 +53,34 @@ class CategoryListViewController: UITableViewController {
         
         return cell
     }
+    
+    // MARK: - Table view delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if let categoryItem = categoryList?[indexPath.row] {
+            performSegue(withIdentifier: Identifier.categoryList, sender: categoryItem)
+        }
+    }
+    
+}
 
+extension CategoryListViewController {
+    struct Identifier {
+        static let categoryList = "ArticleList"
+    }
+}
+
+extension CategoryListViewController {
     
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        //check if it is the Category List segue
+        guard segue.identifier == Identifier.categoryList else { return }
+        
+        //check if destination view controller in Article List viewcontroller
+        guard let articleListViewController = segue.destination as? ArticleListViewController, let category = sender as? Category else { return }
+        
+        articleListViewController.category = category
+    }
 }
