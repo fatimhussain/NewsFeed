@@ -14,6 +14,7 @@ class ArticleListCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var publishDateLabel: UILabel!
     @IBOutlet weak var descriptionCell: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +30,7 @@ class ArticleListCell: UITableViewCell {
     func configureCell(with article: Article) {
         titleLabel.text = article.title
         publishDateLabel.text = article.publishedAt
+        authorLabel.text = article.author
         descriptionCell.text = article.desc
     }
 }
