@@ -7,9 +7,17 @@
 //
 
 import Foundation
+import ObjectMapper
 
 class NewsFeed: BaseObject {
     public var status: String?
     public var totalResults: Int = 0
     public var articles: [Article]?
+    
+    override func mapping(map: Map) {
+        super.mapping(map: map)
+        status <- map["status"]
+        totalResults <- map["totalResults"]
+        articles <- map["articles"]
+    }
 }

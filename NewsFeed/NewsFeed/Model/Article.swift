@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjectMapper
 
 class Article: BaseObject {
     public var author: String?
@@ -17,4 +18,15 @@ class Article: BaseObject {
     public var publishedAt: String?
     public var content: String?
     public var source: Source?
+    
+    override func mapping(map: Map) {
+        author <- map["author"]
+        title <- map["title"]
+        desc <- map["description"]
+        url <- map["url"]
+        imageUrl <- map["urlToImage"]
+        publishedAt <- map["publishedAt"]
+        content <- map["content"]
+        source <- map["source"]
+    }
 }

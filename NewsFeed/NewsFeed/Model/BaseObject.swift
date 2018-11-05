@@ -7,7 +7,14 @@
 //
 
 import Foundation
+import ObjectMapper
 
-class BaseObject: NSObject {
+class BaseObject: NSObject, Mappable {
+    required init?(map: Map){
+        
+    }
     
+    public func mapping(map: Map) {
+
+    }
 }
