@@ -21,6 +21,7 @@
 		8D2F753E2190D2BC003A02B2 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2F753D2190D2BC003A02B2 /* ArticleListViewController.swift */; };
 		8D2F75422190D7C4003A02B2 /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2F75402190D7C4003A02B2 /* ArticleListCell.swift */; };
 		8D2F75432190D7C4003A02B2 /* ArticleListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D2F75412190D7C4003A02B2 /* ArticleListCell.xib */; };
+		8D2F75452190F6E3003A02B2 /* ArticleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2F75442190F6E3003A02B2 /* ArticleDetailsViewController.swift */; };
 		9F2888AA470DC4A88B34BBCD /* Pods_NewsFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF91FC865FD9EF0E25E74DC /* Pods_NewsFeed.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		8D2F753D2190D2BC003A02B2 /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		8D2F75402190D7C4003A02B2 /* ArticleListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCell.swift; sourceTree = "<group>"; };
 		8D2F75412190D7C4003A02B2 /* ArticleListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleListCell.xib; sourceTree = "<group>"; };
+		8D2F75442190F6E3003A02B2 /* ArticleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewController.swift; sourceTree = "<group>"; };
 		FF253E8957B88CD1967F440F /* Pods-NewsFeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsFeed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsFeed/Pods-NewsFeed.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 			children = (
 				8D2F753B2190CF9C003A02B2 /* CategoryListViewController.swift */,
 				8D2F753D2190D2BC003A02B2 /* ArticleListViewController.swift */,
+				8D2F75442190F6E3003A02B2 /* ArticleDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -223,15 +226,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-NewsFeed-checkManifestLockResult.txt",
 			);
@@ -245,8 +244,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NewsFeed/Pods-NewsFeed-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
@@ -254,8 +251,6 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
@@ -276,6 +271,7 @@
 				8D2F75392190CAF4003A02B2 /* APIManager.swift in Sources */,
 				8D2F753C2190CF9C003A02B2 /* CategoryListViewController.swift in Sources */,
 				8D2F75422190D7C4003A02B2 /* ArticleListCell.swift in Sources */,
+				8D2F75452190F6E3003A02B2 /* ArticleDetailsViewController.swift in Sources */,
 				8D2F751B2190C717003A02B2 /* AppDelegate.swift in Sources */,
 				8D2F75352190C9B3003A02B2 /* Source.swift in Sources */,
 				8D2F75312190C97E003A02B2 /* NewsFeed.swift in Sources */,

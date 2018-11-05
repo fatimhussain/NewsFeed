@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,7 +27,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Qcb-Lh-Twc" kind="show" identifier="ArticleList" id="RIH-EV-Psh"/>
+                                    <segue destination="0tq-5K-uYL" kind="show" identifier="ArticleList" id="bM4-8P-bcr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -42,32 +43,55 @@
             <point key="canvasLocation" x="1112.8" y="94.902548725637189"/>
         </scene>
         <!--Article List View Controller-->
-        <scene sceneID="cvx-K6-0J0">
+        <scene sceneID="3Aq-wQ-tQQ">
             <objects>
-                <tableViewController id="Qcb-Lh-Twc" customClass="ArticleListViewController" customModule="NewsFeed" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bnT-7Q-3GM">
+                <tableViewController id="0tq-5K-uYL" customClass="ArticleListViewController" customModule="NewsFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uDv-bg-UZy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="B2V-BC-Nsz">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B2V-BC-Nsz" id="qc1-tU-JHE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="Qcb-Lh-Twc" id="c1l-Nl-fOa"/>
-                            <outlet property="delegate" destination="Qcb-Lh-Twc" id="spU-7x-Dbh"/>
+                            <outlet property="dataSource" destination="0tq-5K-uYL" id="a81-Ob-mig"/>
+                            <outlet property="delegate" destination="0tq-5K-uYL" id="LXL-gy-5hv"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="KUT-zY-xZV" kind="show" identifier="ArticleDetails" id="Vu8-Zx-yKA"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eBh-5d-sca" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zTu-Ks-SDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1950" y="101"/>
+            <point key="canvasLocation" x="1917" y="112"/>
+        </scene>
+        <!--Article Details View Controller-->
+        <scene sceneID="NiF-BN-UAW">
+            <objects>
+                <viewController id="KUT-zY-xZV" customClass="ArticleDetailsViewController" customModule="NewsFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ryE-Qt-rEP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQi-El-t7e">
+                                <rect key="frame" x="15" y="84" width="345" height="583"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aQi-El-t7e" firstAttribute="leading" secondItem="cDZ-8W-lBl" secondAttribute="leading" constant="15" id="7rI-11-DDe"/>
+                            <constraint firstItem="cDZ-8W-lBl" firstAttribute="trailing" secondItem="aQi-El-t7e" secondAttribute="trailing" constant="15" id="TgZ-db-0HI"/>
+                            <constraint firstItem="aQi-El-t7e" firstAttribute="top" secondItem="cDZ-8W-lBl" secondAttribute="top" constant="20" id="bpY-fb-Muw"/>
+                            <constraint firstItem="cDZ-8W-lBl" firstAttribute="bottom" secondItem="aQi-El-t7e" secondAttribute="bottom" id="gWA-2k-HC4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cDZ-8W-lBl"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="aQi-El-t7e" id="X0d-yc-aRc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dGm-GC-mlO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2655" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="feU-fx-OYJ">
