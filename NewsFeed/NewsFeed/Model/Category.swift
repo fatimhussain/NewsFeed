@@ -11,4 +11,14 @@ import Foundation
 class Category: NSObject {
     public var name: String?
     public var url: String?
+    
+    override init() {
+        
+    }
+    
+    init(name: String, url: String) {
+        super.init()
+        self.name = name
+        self.url = url
+    }
 }
