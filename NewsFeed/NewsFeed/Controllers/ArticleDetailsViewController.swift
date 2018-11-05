@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ArticleDetailsViewController: UIViewController {
     
@@ -29,4 +30,18 @@ class ArticleDetailsViewController: UIViewController {
     }
 }
 
+extension ArticleDetailsViewController: UIWebViewDelegate {
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        SVProgressHUD.show()
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        SVProgressHUD.dismiss()
+    }
+}
 

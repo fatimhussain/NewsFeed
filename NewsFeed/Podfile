@@ -8,5 +8,5 @@ target 'NewsFeed' do
   # Pods for NewsFeed
  pod 'Alamofire'
  pod 'AlamofireObjectMapper'
-
+ pod 'SVProgressHUD'
 end

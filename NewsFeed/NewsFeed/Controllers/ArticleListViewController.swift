@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ArticleListViewController: UITableViewController {
     var category: Category?
@@ -40,7 +41,10 @@ class ArticleListViewController: UITableViewController {
             return
         }
         
+        SVProgressHUD.show()
         APIManager.shared.loadNews(for: category) { [weak self] (result, error) in
+            SVProgressHUD.dismiss()
+            
             //display the error if error
             guard error == nil else {
                 self?.displayErrorMessage(message: error?.localizedDescription ?? "")
